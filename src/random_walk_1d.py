@@ -1,0 +1,1 @@
+print("Random walk project initialized")
