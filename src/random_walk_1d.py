@@ -26,11 +26,15 @@ def N_walks(N, T): #simulate N 1D random walks of T steps
     return all_walks
 
 
+def mean_position(A, t): #Function to calculate mean position using (1/N)(sum(xi(t))), takes the array of simulated walks as input
 
+    N = len(A) # Number of walks simulated
+
+    total = 0 #initial sum
+    for i in range(N): #looping through each list element and adding the specific value at time t 
+        total += A[i][t]
     
-# print("x position over 100 steps", random_walk(100))
-# print("length of list:", len(random_walk(100)))
-
+    return total / N
 
 
 
