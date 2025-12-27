@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-def random_walk(T): # A function that simulates a 1D random walk of a particle, T representing the number of steps
+def random_walk(T: int) -> list: # A function that simulates a 1D random walk of a particle, T representing the number of steps
 
     x_particle = [0] #initially zero because particle starts at x = 0
     # due to this initial value of zero, every array of random_walk will have length of T+1
@@ -16,7 +16,7 @@ def random_walk(T): # A function that simulates a 1D random walk of a particle, 
             x_particle.append(new_x_pos2)
     return x_particle
 
-def N_walks(N, T): #simulate N 1D random walks of T steps
+def N_walks(N: int, T: int) -> np.ndarray: #simulate N 1D random walks of T steps
 
     all_walks = np.empty((N, T+1), dtype = int) #empty 2D array of ints, N rows and T+1 columns
 
@@ -26,7 +26,7 @@ def N_walks(N, T): #simulate N 1D random walks of T steps
     return all_walks
 
 
-def mean_position(A, t): #  Function to calculate mean position, Takes the array of simulated walks and a time index as input
+def mean_position(A: np.ndarray, t: int) -> float: #  Function to calculate mean position, Takes the array of simulated walks and a time index as input
 
     N = len(A) # Number of walks simulated
 
@@ -38,7 +38,7 @@ def mean_position(A, t): #  Function to calculate mean position, Takes the array
     
     return total / N
 
-def MSD(A, t): # Function to calculate Mean squared distance, takes an array of simulated walks and a time index as inputs
+def MSD(A: np.ndarray, t: int) -> float: # Function to calculate Mean squared distance, takes an array of simulated walks and a time index as inputs
 
     N = len(A)
 
@@ -49,8 +49,4 @@ def MSD(A, t): # Function to calculate Mean squared distance, takes an array of 
         total += (A[i][t])**2
     
     return total / N
-
-
-
-
 
