@@ -26,9 +26,11 @@ def N_walks(N, T): #simulate N 1D random walks of T steps
     return all_walks
 
 
-def mean_position(A, t): #Function to calculate mean position using (1/N)(sum(xi(t))), takes the array of simulated walks as input
+def mean_position(A, t): #  Function to calculate mean position, Takes the array of simulated walks and a time index as input
 
     N = len(A) # Number of walks simulated
+
+    # Uses (1/N)(sum(xi(t))) 
 
     total = 0 #initial sum
     for i in range(N): #looping through each list element and adding the specific value at time t 
@@ -36,6 +38,17 @@ def mean_position(A, t): #Function to calculate mean position using (1/N)(sum(xi
     
     return total / N
 
+def MSD(A, t): # Function to calculate Mean squared distance, takes an array of simulated walks and a time index as inputs
+
+    N = len(A)
+
+    # Uses (1/N)(sum(xi(t)))^2
+
+    total = 0 #initial sum
+    for i in range(N): #looping through each list element and adding and squaring the specific value at time t 
+        total += (A[i][t])**2
+    
+    return total / N
 
 
 
