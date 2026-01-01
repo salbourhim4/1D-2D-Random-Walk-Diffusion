@@ -81,3 +81,12 @@ def plot_diffusion(N: int, T: int):
     plt.tight_layout()
     plt.show()
 
+    # calculate diffusion coefficients
+    slope = np.polyfit(theoretical_time[1:], msd[1:], 1)[0]
+    diffusion_sim = slope/2
+
+    return f"Simulate diffusion coefficient D = {diffusion_sim:.4f} \nTheoretical diffusion coefficient D = 0.5"
+
+# result = plot_diffusion(10000, 100)
+# print(result)
+
