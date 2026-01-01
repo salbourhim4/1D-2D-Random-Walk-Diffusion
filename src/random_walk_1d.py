@@ -50,3 +50,7 @@ def MSD(A: np.ndarray, t: int) -> float: # Function to calculate Mean squared di
     
     return total / N
 
+#commit this before WRITING ANYTHING ELSE
+def MSD_all_times(A: np.ndarray) -> np.ndarray: 
+
+    return (A**2).mean(axis = 0)
