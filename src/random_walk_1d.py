@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import matplotlib.pyplot as plt
 
 def random_walk(T: int) -> list: # A function that simulates a 1D random walk of a particle, T representing the number of steps
 
@@ -42,7 +43,7 @@ def MSD(A: np.ndarray, t: int) -> float: # Function to calculate Mean squared di
 
     N = len(A)
 
-    # Uses (1/N)(sum(xi(t)))^2
+    # Uses (1/N) * sum(xi(t)^2)
 
     total = 0 #initial sum
     for i in range(N): #looping through each list element and adding and squaring the specific value at time t 
@@ -50,7 +51,33 @@ def MSD(A: np.ndarray, t: int) -> float: # Function to calculate Mean squared di
     
     return total / N
 
-#commit this before WRITING ANYTHING ELSE
-def MSD_all_times(A: np.ndarray) -> np.ndarray: 
+def MSD_all_times(A: np.ndarray) -> np.ndarray: #calculates msd across all times t
 
     return (A**2).mean(axis = 0)
+
+def plot_diffusion(N: int, T: int): 
+
+    # generates random walks and MSD array
+    walks = N_walks(N, T)
+    msd = MSD_all_times(walks)
+
+    theoretical_time = np.arange(T+1) # Array of time values, [0, 1, 2, ...]
+    
+    # create scatter plot of msd values
+    plt.figure(figsize=(10,6))
+    plt.scatter(theoretical_time, msd, color='blue', s=30, alpha=0.7, label='Simulated MSD', zorder=3)
+
+    # create plot of best fit
+    plt.plot(theoretical_time, theoretical_time, 'r-', linewidth=2, label='Theoretical (MSD = t)', zorder = 2)
+
+    # creates grid and labels
+    plt.xlabel('Time (steps)', fontsize=12)
+    plt.ylabel('Mean Squared Displacement', fontsize=12)
+    plt.title('MSD vs Time for 1D Random Walk', fontsize=14)
+    plt.legend(fontsize=11)
+    plt.grid(True, alpha=0.3)
+    plt.xlim(left=0)
+    plt.ylim(bottom=0)
+    plt.tight_layout()
+    plt.show()
+
