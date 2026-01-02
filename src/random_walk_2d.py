@@ -28,6 +28,7 @@ def N_walks_2D(N: int, T: int) -> np.ndarray: # function to simulate N 2D random
     for i in range(N):
         all_walks[i] = np.array(rand_walk_2D(T))
 
-    return all_walks # returns a 1D array
+    return all_walks # returns a 3D array
 
-
+def MSD_all_times_2D(A: np.ndarray) -> np.ndarray: # Calculates MSD across all times 
+    return (A**2).sum(axis=1).mean(axis=0) 
