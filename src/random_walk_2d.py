@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import matplotlib.pyplot as plt
 
 def rand_walk_2D(T: int) -> list: #function to simulate a single 2d random walk of steps T
 
@@ -32,3 +33,35 @@ def N_walks_2D(N: int, T: int) -> np.ndarray: # function to simulate N 2D random
 
 def MSD_all_times_2D(A: np.ndarray) -> np.ndarray: # Calculates MSD across all times 
     return (A**2).sum(axis=1).mean(axis=0) 
+
+def plot_diffusion_2D(N: int, T: int): 
+
+    # generates random walks and MSD array
+    walks = N_walks_2D(N, T)
+    msd = MSD_all_times_2D(walks)
+
+    theoretical_time = np.arange(T+1) # Array of time values, [0, 1, 2, ...]
+    
+    # create scatter plot of msd values
+    plt.figure(figsize=(10,6))
+    plt.scatter(theoretical_time, msd, color='blue', s=30, alpha=0.7, label='Simulated MSD', zorder=3)
+
+    # create plot of best fit (In 2D: MSD = 4Dt = 2t when D=0.5)
+    plt.plot(theoretical_time, 2*theoretical_time, 'r-', linewidth=2, label='Theoretical (MSD = 2t)', zorder = 2)
+
+    # creates grid and labels
+    plt.xlabel('Time (steps)', fontsize=12)
+    plt.ylabel('Mean Squared Displacement', fontsize=12)
+    plt.title('MSD vs Time for 2D Random Walk', fontsize=14)
+    plt.legend(fontsize=11)
+    plt.grid(True, alpha=0.3)
+    plt.xlim(left=0)
+    plt.ylim(bottom=0)
+    plt.tight_layout()
+    plt.show()
+
+    # calculate diffusion coefficients
+    slope = np.polyfit(theoretical_time[1:], msd[1:], 1)[0]
+    diffusion_sim = slope/4
+
+    return f"Simulate diffusion coefficient D = {diffusion_sim:.4f} \nTheoretical diffusion coefficient D = 0.5"
