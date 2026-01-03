@@ -17,8 +17,7 @@ This project uses Monte Carlo simulations of unbiased random walks to demonstrat
 - Diffusion Coefficient Extraction: Calculates diffusion coefficient from the slope of the MSD vs time graph
 
 ## Requirements
-...
-
+```
 numpy
 matplotlib
-...
+```
