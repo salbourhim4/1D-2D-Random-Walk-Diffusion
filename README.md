@@ -52,3 +52,12 @@ msd = MSD_all_times(walks)
 plot_diffusion(N, T)
 ```
 
+### Basic 2D Simulation
+```python
+# Run 1000 2D walks of 100 steps each
+walks_2d = N_walks_2D(N, T)
+msd_2d = MSD_all_times_2D(walks_2d)
+
+# Plot results
+plot_diffusion_2D(N, T)
+```
