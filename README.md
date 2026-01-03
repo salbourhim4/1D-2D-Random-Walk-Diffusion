@@ -21,3 +21,15 @@ This project uses Monte Carlo simulations of unbiased random walks to demonstrat
 numpy
 matplotlib
 ```
+
+## Installation
+```bash
+git clone https://github.com/salbourhim4/1D-2D-Random-Walk-Diffusion.git
+cd 1D-2D-Random-Walk-Diffusion
+```
+
+Install dependencies:
+```bash
+pip install numpy matplotlib
+```
+
