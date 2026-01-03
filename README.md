@@ -61,3 +61,20 @@ msd_2d = MSD_all_times_2D(walks_2d)
 # Plot results
 plot_diffusion_2D(N, T)
 ```
+
+## Functions
+
+### 1D Random Walk Functions
+- `random_walk(T)`: Simulates a single 1D random walk of T steps
+- `N_walks(N, T)`: Generates N independent 1D random walks
+- `mean_position(A, t)`: Calculates mean position at time t
+- `MSD(A, t)`: Calculates mean squared displacement at time t
+- `MSD_all_times(A)`: Calculates MSD for all time steps efficiently
+- `plot_diffusion(N, T)`: Generates MSD vs time plot with diffusion coefficient
+
+### 2D Random Walk Functions
+- `rand_walk_2D(T)`: Simulates a single 2D random walk of T steps
+- `N_walks_2D(N, T)`: Generates N independent 2D random walks
+- `MSD_all_times_2D(A)`: Calculates 2D MSD for all time steps
+- `plot_diffusion_2D(N, T)`: Generates 2D MSD vs time plot
+
