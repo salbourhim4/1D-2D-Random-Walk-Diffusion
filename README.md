@@ -1,2 +1,4 @@
 # 1D-2D Random Walk Diffusion Simulation
-Monte Carlo simulations of 1D and 2D random walks to study diffusion, ensemble averages, and emergent statistical behavior using numerical experiments.
+## Overview
+This project uses Monte Carlo simulations of unbiased random walks to demonstrate diffusion by computing the mean squared displacement (MSD) and extracting the diffusion coefficient. The simulations verify theoretical scaling laws numerically, showing that MSD ∝ t for both 1D and 2D random walks
+
