@@ -33,3 +33,22 @@ Install dependencies:
 pip install numpy matplotlib
 ```
 
+## Usage
+
+### Basic 1D Simulation
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from random_walk import *
+
+# Run 1000 walks of 100 steps each
+N = 1000  # Number of walks
+T = 100   # Number of steps
+
+walks = N_walks(N, T)
+msd = MSD_all_times(walks)
+
+# Plot results
+plot_diffusion(N, T)
+```
+
