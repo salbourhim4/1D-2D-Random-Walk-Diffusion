@@ -93,3 +93,38 @@ plot_diffusion_2D(N, T)
 ### Convergence
 Increasing N (number of walks) reduces statistical noise and improves agreement with theory. Increasing T (number of steps) extends the time range for verification.
 
+## Example Results
+
+The simulations demonstrate:
+1. **Linear scaling**: MSD grows linearly with time (MSD ∝ t)
+2. **Theoretical agreement**: Simulated diffusion coefficients match theoretical predictions
+3. **Statistical convergence**: Larger N produces smoother curves closer to theory
+
+## Project Structure
+```
+1D-2D-Random-Walk-Diffusion/
+│
+├── random_walk.py          # Main simulation code
+├── README.md               # This file
+└── examples/               # Example plots and results (optional)
+```
+
+## Future Extensions
+- [ ] Add 3D random walk simulation
+- [ ] Implement biased random walks (drift)
+- [ ] Add animation of random walk trajectories
+- [ ] Explore different step size distributions
+- [ ] Compare with analytical solutions
+
+## Contributing
+Feel free to open issues or submit pull requests for improvements!
+
+## License
+This project is licensed under the terms of the MIT license.
+
+## Author
+Salaheddine Bourhim
+
+## Acknowledgments
+This project demonstrates fundamental concepts in statistical mechanics and Brownian motion, following the work of Einstein and Smoluchowski on diffusion theory.
+
