@@ -78,3 +78,18 @@ plot_diffusion_2D(N, T)
 - `MSD_all_times_2D(A)`: Calculates 2D MSD for all time steps
 - `plot_diffusion_2D(N, T)`: Generates 2D MSD vs time plot
 
+## Theoretical Background
+
+### 1D Random Walk
+- Diffusion coefficient: **D = 0.5** (for unit step size)
+- MSD relation: **MSD = 2Dt = t**
+- Theoretical slope: **1**
+
+### 2D Random Walk
+- Diffusion coefficient: **D = 0.25** (for unit step size)
+- MSD relation: **MSD = 4Dt = t**
+- Theoretical slope: **1**
+
+### Convergence
+Increasing N (number of walks) reduces statistical noise and improves agreement with theory. Increasing T (number of steps) extends the time range for verification.
+
